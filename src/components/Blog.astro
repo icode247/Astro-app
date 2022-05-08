@@ -1,6 +1,4 @@
 ---
-import Modal from "./Modal.astro"
-
 interface Blogs {
     id: number;
     name: string;
@@ -16,24 +14,20 @@ const blogs: Blogs[] = [{
     description: 'This is the first blog',
     body: 'This is the first blog',
     author: 'John Doe',
-    slug:"blog-1"
+    slug:"Building-fast-web-application-using-Astro"
 }];
 ---
     <div>
         <h1>Blogs</h1>
         <ul>   
-        {
-            blogs.map(blog =>  <div class="media mb-3">
-
-      <div class="media-body p-2 shadow-sm rounded bg-light border">
-
-        <h6 class="mt-0 mb-1 text-muted">{blog.author}</h6>
-
-      
-      </div>
-
-    </div>)
-        } 
-            
+            {
+                blogs.map(blog =>  
+                <div class="media mb-3">
+                    <div class="media-body p-2 shadow-sm rounded bg-light border">
+                        <h6 class="mt-0 mb-1 text-muted">{blog.author}</h6>
+                        <a href={blog.slug}>{blog.name}</a>
+                    </div>
+                </div>)
+            }      
         </ul> 
     </div>
